@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberDAO">
+
+<insert id="insertMember" parameterType="member">
+INSERT INTO member
+(userId, userName, password, tel1, tel2, tel3, addr, email,smsOk,emailOk)
+VALUES(#{userId},#{userName},#{password},#{tel1},#{tel2},#{tel3}
+, #{addr},#{email},#{smsOk},#{emailOk})
+
+
+</insert>
+
+
+</mapper>
