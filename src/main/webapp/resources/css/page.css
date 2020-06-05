@@ -1,7 +1,11 @@
 <!-- 첫번째 메뉴바 -->
 
-
-
+navbar navbar-expand-sm{
+	width:100%;
+}
+navbar navbar-expand-sm div{
+	text-align: center;
+}
 #menu1{
    left: 50%; 
     margin-left: 110px;
@@ -13,6 +17,13 @@
 }
 
 <!-- 두번째 메뉴바 -->
+.navbar navbar-expand-sm navbar-dark bg-dark{
+	width:100%;
+}
+.navbar navbar-expand-sm navbar-dark bg-dark div
+{
+	text-align: center;
+}
 #menu2{
  margin-right: 10px;
 } 
@@ -102,18 +113,18 @@ button:focus{
 }
 
 #memberList{
-	margin-bottom:100px;
 	margin-right: auto;
 	margin-left: auto;
 }
 #mTable{
 	width:1200px;
 	text-align: ceneter;
+	
 
 }
 .mTable{
 	margin:auto;
-	margin-top:20px;
+	margin-top:5px;
 }
 .mTable th{
 	border : none;
@@ -121,7 +132,7 @@ button:focus{
 	
 }
 #selectAll{
-	margin-left:816px;
+	margin-left:940px;
 	text-align:right;
 	}
 .mListp{
@@ -180,13 +191,109 @@ button:focus{
 	text-align: right;
 
 	}
+
 .mainDiv{
 	width:1200px;
 	margin-right: auto;
 	margin-left: auto;
 }
 #memberInfo{
-
+	text-align:left;
 	margin-left:465px;
+} 
 
+#memberListTr{
+	background-color:#fbfafa;
+}
+#mTable td{
+	border: 1px solid #e8e8e8;
+}
+#modifyDiv{
+	width:100%;	
+}
+#modifyDiv>div{
+	text-align: center;
+	margin-top:100px;
+}
+#modifyTable{
+	margin:auto;
+	margin-top:100px;
+	margin-bottom: 10px;
+}
+#modifyBtnDiv{
+	margin-bottom: 100px;
+}
+#pagingDiv{
+	margin-bottom:100px;
+}
+.modifyTable {
+	width:1200px;
+	height:600px;
+
+	
+	margin-bottom:100px;
+}
+.modifyTable th{
+	
+	font-weight: bold;
+
+	
+}
+.modifyTable td {
+	width:auto;
+	padding:10px 0 8px 10px;
+	border:1px solid #e8e8e8;
+	font-size:12px;
+	color:black;
+	
+	
+}
+.Modifybtn{
+	width:152px;
+	height:42px;
+	border:none;
+	padding:0 0 0;
+}
+#MyPageDiv{
+	width:1200px;
+	margin:auto;
+	
+	
+}
+.my{
+	text-align: center;
+	margin-top:20px;
+	margin-bottom:20px;
+	border-bottom: 1px solid #e4e4e4;
+	height:66px;
+}
+
+#MyPageDiv button{
+	width:152px;
+	height:40px;
+}
+#MyPageDiv h3{
+	float:left;
+	width:300px;
+	padding:0 0 0;
+	margin-left:200px;
+	
+}
+#MyPageDiv p{
+	float:left;
+	height:66px;
+	
+}
+#MyPageDiv a{
+	margin-bottom:8px;
+}
+#container{
+	width:100%;
+	height:100%;
+}
+#OrderHistory div{
+	width:300px;
+}
+#mainDiv{
+	height:600px;
 }

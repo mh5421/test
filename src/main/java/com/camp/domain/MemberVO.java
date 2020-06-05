@@ -5,16 +5,25 @@ public class MemberVO {
 	private String userId;
 	private String userName;
 	private String password;
-	private int tel1;
-	private int tel2;
-	private int tel3;
-	private String addr;
+	private String tel1;
+	private String tel2;
+	private String tel3;
+	private String addr1;
+	private String addr2;
+	private String postcode;
 	private String email;
 	private String smsOk;
 	private String emailOk;
+	private String hiredate;
 	
 	
 	
+	public String getHiredate() {
+		return hiredate;
+	}
+	public void setHiredate(String hiredate) {
+		this.hiredate = hiredate;
+	}
 	public String getUserId() {
 		return userId;
 	}
@@ -33,29 +42,29 @@ public class MemberVO {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public int getTel1() {
+	public String getTel1() {
 		return tel1;
 	}
-	public void setTel1(int tel1) {
+	public void setTel1(String tel1) {
 		this.tel1 = tel1;
 	}
-	public int getTel2() {
+	public String getTel2() {
 		return tel2;
 	}
-	public void setTel2(int tel2) {
+	public void setTel2(String tel2) {
 		this.tel2 = tel2;
 	}
-	public int getTel3() {
+	public String getTel3() {
 		return tel3;
 	}
-	public void setTel3(int tel3) {
+	public void setTel3(String tel3) {
 		this.tel3 = tel3;
 	}
 	public String getAddr() {
-		return addr;
+		return addr1;
 	}
 	public void setAddr(String addr) {
-		this.addr = addr;
+		this.addr1 = addr;
 	}
 	public String getEmail() {
 		return email;
@@ -74,6 +83,24 @@ public class MemberVO {
 	}
 	public void setEmailOk(String emailOk) {
 		this.emailOk = emailOk;
+	}
+	public String getAddr1() {
+		return addr1;
+	}
+	public void setAddr1(String addr1) {
+		this.addr1 = addr1;
+	}
+	public String getAddr2() {
+		return addr2;
+	}
+	public void setAddr2(String addr2) {
+		this.addr2 = addr2;
+	}
+	public String getPostcode() {
+		return postcode;
+	}
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
 	}
 	
 	

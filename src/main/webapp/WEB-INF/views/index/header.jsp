@@ -4,6 +4,7 @@
 	// <jsp:param>의 값 넘겨받기
 	String folder = request.getParameter("folder");
 	if( folder == null || folder.equals("")) folder="";
+	
 	%>    
 <!DOCTYPE html> 
 <html> 
@@ -32,7 +33,8 @@
  <nav class="navbar navbar-expand-sm"> 
  <div class="collapse navbar-collapse" id="menu1"> 
  	<ul class="navbar-nav mx-auto"> 
- 		<li class="nav-item1"><a href="<%=folder %>index/memberList.do" class="nav-link">회원관리</a></li>
+ 		<li class="nav-item1"><a href="<%=folder %>index/Manager.do" class="nav-link">매니저</a></li>
+ 		
 	 	<li class="nav-item1"><a href="#" class="nav-link">로그인</a></li>
 	 	<li class="nav-item1"><a href="<%=folder %>index/Register.do" class="nav-link">회원가입</a></li>
 	 	<li class="nav-item1"><a href="<%=folder %>main.do" class="nav-link">홈으로</a></li>
@@ -40,7 +42,10 @@
 	 	<li class="nav-item1"><a href="#" class="nav-link">Q&A</a></li>
 	 	<li class="nav-item1"><a href="<%=folder %>shop/cart.do" class="nav-link">장바구니</a></li>
 	 	<li class="nav-item1"><a href="<%=folder %>shop/wishList.do" class="nav-link">찜하기</a></li>
- 		<li class="nav-item1"><a href="<%=folder %>index/memberJoin_ok.do" class="nav-link">회원관리</a></li>
+	 	<li class="nav-item1"><a href="<%=folder %>index/infoModify.do?userId=1234" class="nav-link">회원정보수정</a></li>
+	 	<li class="nav-item1"><a href="<%=folder %>index/myPage.do" class="nav-link">마이 페이지</a></li>
+	 	<li class="nav-item1"><a href="<%=folder %>index/myPage2.do" class="nav-link">마이 페이지2</a></li>
+ 		
  		
  	</ul> 
  </div>

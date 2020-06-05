@@ -31,6 +31,8 @@
     <link rel="stylesheet" href="/TEST2/resources/css/flaticon.css">
     <link rel="stylesheet" href="/TEST2/resources/css/icomoon.css">
     <link rel="stylesheet" href="/TEST2/resources/css/style.css">
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+    
 </head>
 <body>
 
@@ -41,7 +43,8 @@
       	<div class="row">
       		<div class="mouse">
 						<a href="#" class="mouse-icon">
-							<div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
+							<div class="mouse-wheel"><span class="iconify" data-icon="ion-ios-arrow-up" data-inline="false" style="background: url('https://api.iconify.design/ion-ios-arrow-up.svg') no-repeat center center / contain;"></span></div>
+							
 						</a>
 					</div>
       	</div>

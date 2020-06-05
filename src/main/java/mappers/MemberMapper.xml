@@ -3,14 +3,142 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="MemberDAO">
 
-<insert id="insertMember" parameterType="member">
-INSERT INTO member
-(userId, userName, password, tel1, tel2, tel3, addr, email,smsOk,emailOk)
-VALUES(#{userId},#{userName},#{password},#{tel1},#{tel2},#{tel3}
-, #{addr},#{email},#{smsOk},#{emailOk})
+	<insert id="insertMember" parameterType="member">
+		INSERT INTO member
+		(userId, userName, password, tel1, tel2, tel3, addr1,addr2,postcode,
+		email,smsOk,emailOk,hiredate)
+		VALUES(#{userId},#{userName},#{password},#{tel1},#{tel2},#{tel3},#{addr1},#{addr2},#{postcode}
+		, #{email},#{smsOk},#{emailOk},sysdate)
+	</insert>
 
 
-</insert>
 
+	<select id="idCheck" parameterType="member" resultType="member">
+		SELECT * FROM member WHERE userId=#{userId}
+		<if test='password!=null'>
+			AND password=#{password}
+		</if>
+	</select>
+
+	<select id="listAll" resultType="member">
+		SELECT * FROM member
+
+	</select>
+
+	<select id="listSearch" parameterType="member"
+		resultType="member">
+		SELECT * FROM member
+		<where>
+			<if test="userId!=null">
+				userId=#{userId}
+			</if>
+			<if test="userName!=null">
+				userName=#{userName}
+			</if>
+			<if test="tel3!=null">
+				tel3=#{tel3}
+			</if>
+		</where>
+	</select>
+
+	<update id="memberUpdate" parameterType="member">
+		Update member set
+		userName=#{userName},tel1=#{tel1},tel2=#{tel2},tel3=#{tel3},addr1=#{addr1},addr2=#{addr2},postcode=#{postcode},
+		email=#{email},smsOk=#{smsOk},emailOk=#{emailOk}<if test='password!=""'>,password=#{password}</if>
+		WHERE userId=#{userId}
+	</update>
+
+	<delete id="memberDelete" parameterType="member">
+		Delete From member WHERE userId=#{userId}
+	</delete>
+	
+	<delete id="productDelete" parameterType="goods">
+		Delete From goods WHERE goods_id=#{goods_id}
+	</delete>
+
+	<select id="allCount" resultType="int">
+		SELECT COUNT(*) FROM member
+	</select>
+	
+	<select id="productAllCount" resultType="int">
+		SELECT COUNT(*) FROM goods
+	</select>
+	
+	<select id="searchCount" resultType="int">
+		SELECT COUNT(*) FROM member
+		<where>
+			<if test="userId!=null">
+				userId=#{userId}
+			</if>
+			<if test="userName!=null">
+				userName=#{userName}
+			</if>
+			<if test="tel3!=null">
+				tel3=#{tel3}
+			</if>
+		</where>
+	</select>
+	
+	<select id="productSearchCount" resultType="int">
+		SELECT COUNT(*) FROM goods
+		<where>
+			<if test="goods_id!=0">
+				goods_id=#{goods_id}
+			</if>
+			<if test="goods_name!=null">
+				goods_name=#{goods_name}
+			</if>
+			<if test="goods_type_id!=0">
+				goods_type_id=#{goods_type_id}
+			</if>
+		</where>
+	</select>
+	
+	<select id="selectBoard" resultType="member">
+	SELECT * 
+	
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM member 
+						ORDER BY ROWNUM DESC 
+						) A
+				)
+	WHERE RN BETWEEN #{start} AND #{end}
+	
+	</select>
+	
+	<select id="productSelect" resultType="goods">
+	SELECT * 
+	
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM goods 
+						ORDER BY ROWNUM DESC 
+						) A
+				)
+	WHERE RN BETWEEN #{start} AND #{end}
+	
+	</select>
+	
+	<select id="productListSearch" parameterType="goods" resultType="goods">
+		SELECT * FROM goods
+		<where>
+			<if test="goods_id!=0">
+				goods_id=#{goods_id}
+			</if>
+			<if test="goods_name!=null">
+				goods_name=#{goods_name}
+			</if>
+			<if test="goods_type_id!=0">
+				goods_type_id=#{goods_type_id}
+			</if>
+		</where>
+	</select>
+
+	
 
 </mapper>

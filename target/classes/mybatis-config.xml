@@ -6,7 +6,8 @@
 
 	<!-- Alias 설정 -->
 	<typeAliases>
-		<typeAlias alias="member" type="com.camp.domain.MemberVO" />		
+		<typeAlias alias="member" type="com.camp.domain.MemberVO"/>		
+		<typeAlias alias="goods" type="com.camp.domain.GoodsVO"/>		
 	</typeAliases>
 
 

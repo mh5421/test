@@ -2,17 +2,11 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-
+<title>통계 그래프</title>
 </head>
 <body>
-
-	<%
-		response.sendRedirect("main.do");
-	%>
-
+	ㅎㅇ
 </body>
 </html>

@@ -47,7 +47,7 @@
 <link rel="stylesheet" href="/TEST2/resources/css/style.css">
 <link href="/TEST2/resources/css/page.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-<script type="text/javascript" src="/TEST2/resources/js/memberList.js"></script>
+<script type="text/javascript" src="/TEST2/resources/js/productList.js"></script>
 
 
 
@@ -58,11 +58,11 @@
 
 </head>
 <body>
-	<form id='frm' method="post" action="listSearch.do">
+	<form id='frm' method="post" action="productListSearch.do">
 		<div class="jumbotron"></div>
 		<div id='mHead'>
 			<div>
-				<h1>회원 리스트</h1>
+				<h1>상품 리스트</h1>
 				<hr />
 
 				<input type="hidden" id="nowPage" name="nowPage"
@@ -101,30 +101,29 @@
 				</tr>
 				<tr id="memberListTr">
 					<td><input type='checkbox' id="check_all"></td>
-					<td>아이디/닉네임</td>
-					<td>이름</td>
-					<td>등급</td>
-					<td>구매건수</td>
-					<td>구매금액</td>
-					<td>회원가입일</td>
-					<td>전화번호</td>
-					<td>정보수정</td>
+					<td>상품번호</td>
+					<td>상품명</td>
+					<td>상품가격</td>
+					<td>상품타입</td>
+					<td>재고</td>
+					<td>상품수정</td>
+
 				</tr>
 
 				<tbody>
-					<c:forEach items="${memList }" var="member">
+					<c:forEach items="${ProductList }" var="goods">
 						<tr>
 							<td><input type='checkbox' class='input_check'
-								name="${member.userId }"></td>
-							<td>${member.userId }</td>
-							<td>${member.userName }</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td>${member.hiredate}</td>
-							<td>${member.tel1}-${member.tel2 }-${member.tel3 }</td>
+								name="${goods.goods_id }"></td>
+							<td>${goods.goods_id}</td>
+							<td>${goods.goods_name}</td>
+							<td>${goods.goods_pri }</td>
+
+							<td>${goods.goods_type_id }</td>
+							<td>${goods.goods_count }</td>
+							
 							<td><button id="modifyBtn" type="button"
-									onclick="location.href='memberModify.do?userId=${member.userId}'">수정</button></td>
+									onclick="location.href='productModify.do?goods_id=${goods.goods_id}'">수정</button></td>
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -136,9 +135,9 @@
 				<tr>
 					<td><select name="searchType" id="searchType"
 						style="height: 33px;">
-							<option value="userId">아이디</option>
-							<option value="userName">이름</option>
-							<option value="tel3">전화번호</option>
+							<option value="goods_id">상품번호</option>
+							<option value="goods_name">상품명</option>
+							<option value="goods_type_id">상품타입</option>
 					</select></td>
 					<td><input type='text' size='10px' name='keyword'
 						id='keywordInput'></td>
@@ -149,7 +148,7 @@
 		</div>
 		<div style="display: block; text-align: center;" id="pagingDiv">
 			<c:if test="${paging.startPage != 1 }">
-				<a href="../index/memberList.do?nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a>
+				<a href="../index/productList.do?nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a>
 			</c:if>
 			<c:forEach begin="${paging.startPage }" end="${paging.endPage }"
 				var="p">
@@ -158,12 +157,12 @@
 						<b style="font-size: 30px;">${p }</b>
 					</c:when>
 					<c:when test="${p != paging.nowPage }">
-						<a href="../index/memberList.do?nowPage=${p }&cntPerPage=${paging.cntPerPage}" style="font-size: 20px;">${p }</a>
+						<a href="../index/productList.do?nowPage=${p }&cntPerPage=${paging.cntPerPage}" style="font-size: 20px;">${p }</a>
 					</c:when>
 				</c:choose>
 			</c:forEach>
 			<c:if test="${paging.endPage != paging.lastPage}">
-				<a href="../index/memberList.do?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
+				<a href="../index/productList.do?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
 			</c:if>
 		</div>
 

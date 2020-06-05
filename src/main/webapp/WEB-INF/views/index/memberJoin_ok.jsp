@@ -38,7 +38,7 @@
 							<td>이름 : ${name }</td>
 						</tr>
 						<tr>
-							<td>이메일 : ${pw }</td>
+							<td>이메일 : ${email}</td>
 						</tr>
 					</table>
 
